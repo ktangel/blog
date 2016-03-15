@@ -1,0 +1,488 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>一些样式和业务功能 | LeoLiu的Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="LeoLiu">
+    
+
+    
+    <meta name="description" content="##js判断是否在iframe中
+
+方式一（多浏览器兼容）
+123if (self.frameElement &amp;amp;&amp;amp; self.frameElement.tagName == &quot;IFRAME&quot;) &amp;#123;    alert(&apos;在iframe中&apos;);&amp;#125;
+
+方式二（并且可以知道第几层）
+12345678if (window.frames.length != parent.f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一些样式和业务功能">
+<meta property="og:url" content="http://ktangel.github.io/blog/2015/11/17/一些样式和业务功能/index.html">
+<meta property="og:site_name" content="LeoLiu的Blog">
+<meta property="og:description" content="##js判断是否在iframe中
+
+方式一（多浏览器兼容）
+123if (self.frameElement &amp;amp;&amp;amp; self.frameElement.tagName == &quot;IFRAME&quot;) &amp;#123;    alert(&apos;在iframe中&apos;);&amp;#125;
+
+方式二（并且可以知道第几层）
+12345678if (window.frames.length != parent.f">
+<meta property="og:updated_time" content="2015-08-09T09:18:25.926Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一些样式和业务功能">
+<meta name="twitter:description" content="##js判断是否在iframe中
+
+方式一（多浏览器兼容）
+123if (self.frameElement &amp;amp;&amp;amp; self.frameElement.tagName == &quot;IFRAME&quot;) &amp;#123;    alert(&apos;在iframe中&apos;);&amp;#125;
+
+方式二（并且可以知道第几层）
+12345678if (window.frames.length != parent.f">
+
+    
+    <link rel="alternative" href="/atom.xml" title="LeoLiu的Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/blog/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/blog/img/leo.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/blog/img/leo.jpg">
+    
+    <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/blog/"><img src="/blog/img/leo.png" alt="LeoLiu的Blog" title="LeoLiu的Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/blog/" title="LeoLiu的Blog">LeoLiu的Blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/blog/../index.html">返回首页</a></li>
+					
+						<li><a href="/blog/">学习笔记</a></li>
+					
+						<li><a href="/blog/archives">笔记列表</a></li>
+					
+						<li><a href="/blog/tags">Tags</a></li>
+					
+						<li><a href="/blog/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:ktangel.github.io/blog">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/blog/2015/11/17/一些样式和业务功能/" title="一些样式和业务功能" itemprop="url">一些样式和业务功能</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/blog/about" title="LeoLiu" target="_blank" itemprop="author">LeoLiu</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-16T18:06:53.916Z" itemprop="datePublished"> 發表於 2015-11-17</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		
+			
+		
+		</div>
+		
+		<p>##js判断是否在iframe中</p>
+<ul>
+<li><p>方式一（多浏览器兼容）</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">self</span>.frameElement &amp;&amp; <span class="keyword">self</span>.frameElement.tagName == <span class="string">"IFRAME"</span>) &#123;</span><br><span class="line">    alert(<span class="string">'在iframe中'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方式二（并且可以知道第几层）</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">window</span>.frames.length != parent.frames.length) &#123;</span><br><span class="line">  alert(<span class="string">'在iframe中'</span>);</span><br><span class="line">&#125;</span><br><span class="line">* 方式三（顶部位置判定）</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (self != top) &#123;  </span><br><span class="line">   alert(<span class="string">'在iframe中'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##iCheke小插件的值获取和设置</p>
+<p>提供参数name为元素属性名</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fn.getRadioValue = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> el = <span class="string">'input[name='</span> + name + <span class="string">']:checked'</span>,</span><br><span class="line">        _data;</span><br><span class="line">    _data = $(el).val();</span><br><span class="line">    <span class="keyword">return</span> _data;</span><br><span class="line">&#125;;</span><br><span class="line">fn.setRadioValue = <span class="function"><span class="keyword">function</span>(<span class="params">name, value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> el = $(<span class="string">'input[name='</span> + name + <span class="string">'][value='</span> + value + <span class="string">']'</span>);</span><br><span class="line">    el.iCheck(<span class="string">"check"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##对过过的菜单元素或输入元素在页面隐藏。 </p>
+<ul>
+<li><p>显示更多按钮函数</p>
+ <figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fn.morecon = <span class="function"><span class="keyword">function</span><span class="params">(self, el, el2)</span> &#123;</span> <span class="comment">//更多查询条件显示条</span></span><br><span class="line">    var _width = $<span class="params">(window)</span>.width<span class="params">()</span>;</span><br><span class="line">    <span class="keyword">if</span> <span class="params">($<span class="params">(el)</span>.is<span class="params">(':visible')</span>)</span> &#123;</span><br><span class="line">        $<span class="params">(el)</span>.slideUp<span class="params">()</span>;</span><br><span class="line">        el2 &amp;&amp; <span class="params">(_width &lt; <span class="number">1800</span>)</span> &amp;&amp; $<span class="params">(el2)</span>.is<span class="params">(':visible')</span> &amp;&amp; $<span class="params">(el2)</span>.slideUp<span class="params">()</span>;</span><br><span class="line">        $<span class="params">(self)</span>.html<span class="params">(<span class="string">"More&amp;nbsp;&lt;i class='fa fa-angle-double-down'&gt;&lt;/i&gt;"</span>)</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $<span class="params">(el)</span>.slideDown<span class="params">()</span>;</span><br><span class="line">        el2 &amp;&amp; <span class="built_in">!</span><span class="params">($<span class="params">(el2)</span>.is<span class="params">(':visible')</span>)</span> &amp;&amp; $<span class="params">(el2)</span>.slideDown<span class="params">()</span>;</span><br><span class="line">        $<span class="params">(self)</span>.html<span class="params">(<span class="string">"More&amp;nbsp;&lt;i class='fa fa-angle-double-up'&gt;&lt;/i&gt;"</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>*绑定元素代码</p>
+<p>.more-condition显示更多按钮<br>.other-conditions响应式隐藏<br>.other-conditionsev大分辨率时总是显示<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(<span class="string">".more-conditions"</span>).length) &#123;</span><br><span class="line">    $(<span class="string">".more-conditions"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        edawfn.morecon(<span class="keyword">this</span>, <span class="string">".other-conditions"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> ($(<span class="string">".more-conditionsev"</span>).length) &#123;</span><br><span class="line">    $(<span class="string">".more-conditionsev"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        edawfn.morecon(<span class="keyword">this</span>, <span class="string">".other-conditionsev"</span>, <span class="string">".other-conditions"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>*CSS样式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    <span class="class">.other-conditions</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">padding-top</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.date-cont</span> <span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">display</span>:<span class="value"> none<span class="important">!important</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">visibility</span>:<span class="value"> hidden</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.other-conditionsev</span> <span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">padding-top</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.date-contev</span> <span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">display</span>:<span class="value"> none<span class="important">!important</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">visibility</span>:<span class="value"> hidden</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.more-conditionsev</span> <span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">visibility</span>:<span class="value"> visible</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.more-conditions</span> <span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">visibility</span>:<span class="value"> visible</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>##提示框</p>
+<ul>
+<li><strong>对带有占位符的输入元素，在输入框有内容时，将预提示信息显示在提示框中</strong></li>
+</ul>
+<p>控制函数:<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">fn.placeTip = <span class="params">(function<span class="params">()</span> &#123;</span><br><span class="line">    var wdiv = <span class="string">"&lt;div class='place-wrap'&gt;&lt;/div&gt;"</span>,</span><br><span class="line">        _self,</span><br><span class="line">        span = <span class="string">"&lt;span class='place-text'&gt;&lt;/span&gt;"</span>;</span><br><span class="line">    var cacheTip = []; //缓存已加Tip的元素，也可以用类查。</span><br><span class="line">    var _fn = function<span class="params">(els)</span> &#123;</span><br><span class="line">        _self = $<span class="params">(els)</span>;</span><br><span class="line">        if <span class="params">(!_self.val<span class="params">()</span> == <span class="string">""</span>)</span> &#123;</span><br><span class="line">            _fn.In<span class="params">()</span>;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            console.log<span class="params">(els)</span>;</span><br><span class="line">            _fn.Out<span class="params">()</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    _fn.In = function<span class="params">()</span> &#123;</span><br><span class="line">        var popwrap = _self.parent<span class="params">()</span>.hasClass<span class="params">('place-wrap')</span>,</span><br><span class="line">            h = _self.outerHeight<span class="params">()</span> + <span class="string">"px"</span>,</span><br><span class="line">            _tex = <span class="params">(_self.attr<span class="params">('placeholder')</span>)</span>,</span><br><span class="line">            margin = _self.css<span class="params">(<span class="string">"margin-bottom"</span>)</span>;</span><br><span class="line">        if <span class="params">(!popwrap)</span> &#123;</span><br><span class="line">            _self.wrap<span class="params">($<span class="params">(wdiv)</span>.css<span class="params">(<span class="string">"height"</span>, h)</span>)</span>;</span><br><span class="line">            margin &amp;&amp; _self.parent<span class="params">()</span>.css<span class="params">(<span class="string">"margin-bottom"</span>, margin)</span>;</span><br><span class="line">            cacheTip.push<span class="params">(_self)</span>;</span><br><span class="line">            _self.after<span class="params">($<span class="params">(span)</span>.text<span class="params">(_tex)</span>.hide<span class="params">()</span>)</span>;</span><br><span class="line">            hasframe &amp;&amp; _self.next<span class="params">()</span>.addClass<span class="params">(<span class="string">"iframe"</span>)</span>;</span><br><span class="line">            console.log<span class="params">(hasframe, _self.next<span class="params">()</span>)</span>;</span><br><span class="line">            _self.next<span class="params">()</span>.fadeIn<span class="params">()</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    _fn.Out = function<span class="params">()</span> &#123;</span><br><span class="line">        var spa = _self.next<span class="params">()</span>,</span><br><span class="line">            con = spa.hasClass<span class="params">(<span class="string">"title-wrap"</span>)</span>;</span><br><span class="line">        if <span class="params">(con)</span> &#123;</span><br><span class="line">            spa.fadeOut<span class="params">()</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    _fn.Clear = function<span class="params">()</span> &#123;</span><br><span class="line">        $.each<span class="params">(cacheTip, function<span class="params">(n, el)</span> &#123;</span><br><span class="line">            el.next<span class="params">()</span>.remove<span class="params">()</span>;</span><br><span class="line">        &#125;)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><span class="params">()</span></span><br></pre></td></tr></table></figure></p>
+<p>CSS样式：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.place-wrap</span> <span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.place-text</span> <span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">2px</span> left: <span class="number">30%</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">1px</span> <span class="number">6px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">font-weight</span>:<span class="value"> bold</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid transparent</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">border-top-left-radius</span>:<span class="value"> <span class="number">4px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">border-top-right-radius</span>:<span class="value"> <span class="number">4px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#fff</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="function">rgba</span>(<span class="number">226</span>, <span class="number">79</span>, <span class="number">73</span>, <span class="number">0.75</span>)</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> only screen and (min-width:<span class="number">768px</span> ) </span>&#123;</span><br><span class="line"><span class="class">.iframe</span><span class="class">.place-text</span> <span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">top</span>:<span class="value"> -<span class="number">24px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">right</span>:<span class="value"> inherit</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">40%</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> only screen and (min-width: <span class="number">992px</span>) </span>&#123;</span><br><span class="line"><span class="class">.place-text</span> <span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">top</span>:<span class="value"> -<span class="number">24px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">right</span>:<span class="value"> <span class="number">0px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">left</span>:<span class="value"> inherit</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="at_rule">@<span class="keyword">media</span> only screen and (min-width: <span class="number">1800px</span>) </span>&#123;</span><br><span class="line"><span class="class">.place-text</span> <span class="rules">&#123;</span><br><span class="line"><span class="rule"><span class="attribute">right</span>:<span class="value"> inherit</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">bottom</span>:<span class="value"> -<span class="number">24px</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">10px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://ktangel.github.io/blog/2015/11/17/一些样式和业务功能/" data-title="一些样式和业务功能 | LeoLiu的Blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/blog/2015/11/17/前端规范/" title="前端规范">
+  <strong>上一篇：</strong><br/>
+  <span>
+  前端规范</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/blog/2015/11/17/hello-world/"  title="项部的页面">
+ <strong>下一篇：</strong><br/> 
+ <span>项部的页面
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/11/17/一些样式和业务功能/" data-title="一些样式和业务功能" data-url="http://ktangel.github.io/blog/2015/11/17/一些样式和业务功能/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目錄</strong>
+ 
+ 
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="码农圈">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 大家好,我是LeoLiu,欢迎来到我的Blog,这里是我偶尔备忘写的一些学习笔记,请多指教 <br/>
+			Hello ,I&#39;m LeoLiu.This is my blog,thank you for coming.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:lygltys@163.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/blog/about" target="_blank" title="LeoLiu">LeoLiu</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/blog/js/jquery-2.0.3.min.js"></script>
+<script src="/blog/js/jquery.imagesloaded.min.js"></script>
+<script src="/blog/js/gallery.js"></script>
+<script src="/blog/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"leoliu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/blog/img/scrollup.png"/></a>
+	</div>
+	<script src="/blog/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

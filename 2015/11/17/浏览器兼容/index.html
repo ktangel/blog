@@ -1,0 +1,553 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>浏览器兼容性问题解决方案汇总记录 | LeoLiu的Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="LeoLiu">
+    
+
+    
+    <meta name="description" content="浮动的解决方案12.clearfix:after &amp;#123;content:&quot;.&quot;; display:block; height:0; visibility:hidden; clear:both; &amp;#125; .clearfix &amp;#123; *zoom:1; &amp;#125; //&amp;lt;!--[if IE]&amp;gt;
+如何让div+css兼容所有浏览器
+
+DOCTYPE 影响 CSS 处理
+FF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器兼容性问题解决方案汇总记录">
+<meta property="og:url" content="http://ktangel.github.io/blog/2015/11/17/浏览器兼容/index.html">
+<meta property="og:site_name" content="LeoLiu的Blog">
+<meta property="og:description" content="浮动的解决方案12.clearfix:after &amp;#123;content:&quot;.&quot;; display:block; height:0; visibility:hidden; clear:both; &amp;#125; .clearfix &amp;#123; *zoom:1; &amp;#125; //&amp;lt;!--[if IE]&amp;gt;
+如何让div+css兼容所有浏览器
+
+DOCTYPE 影响 CSS 处理
+FF">
+<meta property="og:updated_time" content="2015-08-09T10:52:24.274Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浏览器兼容性问题解决方案汇总记录">
+<meta name="twitter:description" content="浮动的解决方案12.clearfix:after &amp;#123;content:&quot;.&quot;; display:block; height:0; visibility:hidden; clear:both; &amp;#125; .clearfix &amp;#123; *zoom:1; &amp;#125; //&amp;lt;!--[if IE]&amp;gt;
+如何让div+css兼容所有浏览器
+
+DOCTYPE 影响 CSS 处理
+FF">
+
+    
+    <link rel="alternative" href="/atom.xml" title="LeoLiu的Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/blog/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/blog/img/leo.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/blog/img/leo.jpg">
+    
+    <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/blog/"><img src="/blog/img/leo.png" alt="LeoLiu的Blog" title="LeoLiu的Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/blog/" title="LeoLiu的Blog">LeoLiu的Blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/blog/../index.html">返回首页</a></li>
+					
+						<li><a href="/blog/">学习笔记</a></li>
+					
+						<li><a href="/blog/archives">笔记列表</a></li>
+					
+						<li><a href="/blog/tags">Tags</a></li>
+					
+						<li><a href="/blog/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:ktangel.github.io/blog">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/blog/2015/11/17/浏览器兼容/" title="浏览器兼容性问题解决方案汇总记录" itemprop="url">浏览器兼容性问题解决方案汇总记录</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/blog/about" title="LeoLiu" target="_blank" itemprop="author">LeoLiu</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-16T18:06:53.931Z" itemprop="datePublished"> 發表於 2015-11-17</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-_针对firefox_ie6_ie7的css样式"><span class="toc-number">1.</span> <span class="toc-text">1. 针对firefox ie6 ie7的css样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-_css布局中的居中问题"><span class="toc-number">2.</span> <span class="toc-text">2. css布局中的居中问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-_盒模型不同解释"><span class="toc-number">3.</span> <span class="toc-text">3. 盒模型不同解释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4_浮动ie产生的双倍距离"><span class="toc-number">4.</span> <span class="toc-text">4 浮动ie产生的双倍距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-_IE不认得min-这个定义"><span class="toc-number">5.</span> <span class="toc-text">5. IE不认得min-这个定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6_页面的最小宽度"><span class="toc-number">6.</span> <span class="toc-text">6 页面的最小宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7_清除浮动"><span class="toc-number">7.</span> <span class="toc-text">7 清除浮动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-_DIV浮动IE文本产生3象素的bug"><span class="toc-number">8.</span> <span class="toc-text">8. DIV浮动IE文本产生3象素的bug</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-_属性选择器(这个不能算是兼容,是隐藏css的一个bug)"><span class="toc-number">9.</span> <span class="toc-text">9. 属性选择器(这个不能算是兼容,是隐藏css的一个bug)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-_IE捉迷藏的问题"><span class="toc-number">10.</span> <span class="toc-text">10. IE捉迷藏的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-_高度不适应"><span class="toc-number">11.</span> <span class="toc-text">11. 高度不适应</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IE与Firefox的CSS兼容大全"><span class="toc-number"></span> <span class="toc-text">IE与Firefox的CSS兼容大全</span></a>
+		
+		</div>
+		
+		<p><strong>浮动的解决方案</strong><br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.clearfix</span><span class="pseudo">:after</span> &#123;<span class="attribute">content</span>:<span class="string">"."</span>; <span class="attribute">display</span>:block; <span class="attribute">height</span>:<span class="number">0</span>; <span class="attribute">visibility</span>:hidden; <span class="attribute">clear</span>:both; &#125; </span><br><span class="line"><span class="class">.clearfix</span> &#123; *<span class="attribute">zoom</span>:<span class="number">1</span>; &#125; <span class="comment">//&lt;!--[if IE]&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>如何让div+css兼容所有浏览器</strong></p>
+<ol>
+<li>DOCTYPE 影响 CSS 处理</li>
+<li>FF: div 设置 margin-left, margin-right 为 auto 时已经居中, IE 不行</li>
+<li>FF: body 设置 text-align 时, div 需要设置 margin: auto(主要是 margin-left,margin-right) 方可居中</li>
+<li>FF: 设置 padding 后, div 会增加 height 和 width, 但 IE 不会, 故需要用 !important 多设一个 height 和 width<br>5.FF: 支持 !important, IE 则忽略, 可用 !important 为 FF 特别设置样式</li>
+<li>div 的垂直居中问题: vertical-align:middle; 将行距增加到和整个DIV一样高 line-height:200px; 然后插入文字，就垂直居中了。缺点是要控制内容不要换行</li>
+<li>cursor: pointer 可以同时在 IE FF 中显示游标手指状， hand 仅 IE 可以</li>
+<li>FF: 链接加边框和背景色，需设置 display: block, 同时设置 float: left 保证不换行。参照 menubar, 给 a 和 menubar 设置高度是为了避免底边显示错位, 若不设 height, 可以在 menubar 中插入一个空格。</li>
+<li>在mozilla firefox和IE中的BOX模型解释不一致导致相差2px解决方法： div{margin:30px!important;margin:28px;}注意这两个margin的顺序一定不能写反，据阿捷的说法! important这个属性IE不能识别，但别的浏览器可以识别。所以在IE下其实解释成这样： div{maring:30px;margin:28px}重复定义的话按照最后一个来执行，所以不可以只写margin:XXpx! important;</li>
+<li>ul标签在Mozilla中默认是有padding值的,而在IE中只有margin有值所以先定义 ul{margin:0;padding:0;}就能解决大部分问题</li>
+</ol>
+<p>注意事项：</p>
+<ul>
+<li><p>float的div一定要闭合。<br>例如：(其中floatA、floatB的属性已经设置为float:left;)。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">	&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"floatA"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">	&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"floatB"</span>&gt;&lt;/<span class="keyword">div</span>&gt;&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"NOTfloatC"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">```	</span><br><span class="line"></span><br><span class="line">这里的NOTfloatC并不希望继续平移，而是希望往下排。</span><br><span class="line">这段代码在IE中毫无问题，问题出在FF。原因是NOTfloatC并非float标签，必须将float标签闭合。</span><br><span class="line"></span><br><span class="line">在</span><br></pre></td></tr></table></figure>
+<p> <div class="floatB"></div><br> <div class="NOTfloatC"></div></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">之间加上 </span><br><span class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"clear"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line"></span><br><span class="line">这个<span class="keyword">div</span>一定要注意声明位置，一定要放在最恰当的地方，而且必须与两个具有float属性的<span class="keyword">div</span>同级，之间不能存在嵌套关系，否则会产生异常。</span><br><span class="line">并且将clear这种样式定义为为如下即可：</span><br></pre></td></tr></table></figure>
+<p> .clear{<br> clear:both;<br> }</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">此外，为了让高度能自动适应，要在<span class="tag">wrapper</span>里面加上<span class="rule"><span class="attribute">overflow</span>:<span class="value">hidden</span></span>;</span><br><span class="line">当包含<span class="tag">float</span>的<span class="tag">box</span>的时候，高度自动适应在<span class="tag">IE</span>下无效，这时候应该触发<span class="tag">IE</span>的<span class="tag">layout</span>私有属性(万恶的<span class="tag">IE</span>啊！)用<span class="rule"><span class="attribute">zoom</span>:<span class="value"><span class="number">1</span></span></span>;可以做到，这样就达到了兼容。</span><br><span class="line">例如某一个<span class="tag">wrapper</span>如下定义：</span><br></pre></td></tr></table></figure>
+<p> .colwrapper{<br> overflow:hidden;<br> zoom:1;<br> margin:5px auto;}</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">*  <span class="attribute">margin</span>加倍的问题</span><br><span class="line">设置为<span class="attribute">float</span>的<span class="tag">div</span>在ie下设置的<span class="attribute">margin</span>会加倍。这是一个ie6都存在的bug。</span><br><span class="line">解决方案是在这个<span class="tag">div</span>里面加上<span class="attribute">display</span><span class="value">:inline;</span></span><br><span class="line">例如：</span><br></pre></td></tr></table></figure>
+<p> <div id="imfloat"></div></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">相应的css为</span><br></pre></td></tr></table></figure>
+<p> #IamFloat{<br> float:left;<br> margin:5px;/<em>IE下理解为10px</em>/<br> display:inline;/<em>IE下再理解为5px</em>/}</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">*  关于容器的包涵关系</span><br><span class="line">很多时候，尤其是容器内有平行布局，例如两、三个<span class="tag">float</span>的<span class="tag">div</span>时，宽度很容易出现问题。在<span class="tag">IE</span>中，外层的宽度会被内层更宽的<span class="tag">div</span>挤破。一定要用<span class="tag">Photoshop</span>或者<span class="tag">Firework</span>量取像素级的精度。</span><br><span class="line">*  关于高度的问题</span><br><span class="line">如果是动态地添加内容，高度最好不要定义。浏览器可以自动伸缩，然而如果是静态的内容，高度最好定好。（似乎有时候不会自动往下撑开，不知道具体怎么回事）</span><br><span class="line">*  最狠的手段 <span class="tag">-</span> !<span class="tag">important</span>;</span><br><span class="line">如果实在没有办法解决一些细节问题,可以用这个方法<span class="class">.FF</span>对于"!<span class="tag">important</span>"会自动优先解析,然而<span class="tag">IE</span>则会忽略.如下</span><br><span class="line"> </span><br><span class="line">```	<span class="class">.tabd1</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="function">url</span>(/res/images/up/tab1.gif) no-repeat <span class="number">0px</span> <span class="number">0px</span> <span class="important">!important</span></span></span>; <span class="comment">/*Style for FF*/</span></span><br><span class="line">	<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="function">url</span>(/res/images/up/tab1.gif) no-repeat <span class="number">1px</span> <span class="number">0px</span></span></span>; <span class="comment">/* Style for IE */</span>&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>值得注意的是，一定要将xxxx !important 这句放置在另一句之上，上面已经提过<br>IE7.0出来了，对CSS的支持又有新问题。浏览器多了，网页兼容性更差了，疲于奔命的还是我们 ，为解决IE7.0的兼容问题，找来了下面这篇文章：<br>现在我大部分都是用!important来hack，对于ie6和firefox测试可以正常显示，但是ie7对!important可以正确解释，会导致页面没按要求显示！搜索了一下，找到一个针对IE7不错的hack方式就是使用“*+html”，现在用IE7浏览一下，应该没有问题了。<br>现在写一个CSS可以这样：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#example</span> <span class="rules">&#123; <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#333</span></span></span>; &#125;</span> <span class="comment">/* Moz */</span></span><br><span class="line">* <span class="tag">html</span> <span class="id">#example</span> <span class="rules">&#123; <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#666</span></span></span>; &#125;</span> <span class="comment">/* IE6 */</span></span><br><span class="line">*+<span class="tag">html</span> <span class="id">#example</span> <span class="rules">&#123; <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#999</span></span></span>; &#125;</span> <span class="comment">/* IE7 */</span></span><br></pre></td></tr></table></figure></p>
+<p>那么在firefox下字体颜色显示为#333，IE6下字体颜色显示为#666，IE7下字体颜色显示为#999.</p>
+<hr>
+<p><strong>关于CSS对各个浏览器兼容已经是老生常谈的问题了, 网络上的教程遍地都是.以下内容没有太多新颖, 纯属个人总结, 希望能对初学者有一定的帮助.</strong></p>
+<p>##一、CSS HACK以下两种方法几乎能解决现今所有HACK.</p>
+<ul>
+<li>!important<br>随着IE7对!important的支持, !important 方法现在只针对IE6的HACK.(注意写法.记得该声明位置需要提前.)</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">	<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">	<span class="id">#wrapper</span></span><br><span class="line">	<span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span><span class="important">!important</span></span></span>; <span class="comment">/* IE7+FF */</span></span><br><span class="line">	<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">80px</span></span></span>; <span class="comment">/* IE6 */</span></span><br><span class="line">	&#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">*  IE6/IE77对FireFox *+html 与 *html 是IE特有的标签, firefox 暂不支持.而*+html 又为 IE7特有标签.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">	<span class="id">#wrapper</span></span><br><span class="line">	<span class="rules">&#123;</span><br><span class="line">	#wrapper &#123; <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">120px</span></span></span>; &#125;</span> <span class="comment">/* FireFox */</span></span><br><span class="line">	*<span class="tag">html</span> <span class="id">#wrapper</span> <span class="rules">&#123; <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">80px</span></span></span>;&#125;</span> <span class="comment">/* ie6 fixed */</span></span><br><span class="line">	*+<span class="tag">html</span> <span class="id">#wrapper</span> <span class="rules">&#123; <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">60px</span></span></span>;&#125;</span> <span class="comment">/* ie7 fixed, 注意顺序 */</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意:</strong><br>*+html 对IE7的HACK 必须保证HTML顶部有如下声明：<br>&lt;!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01 Transitional//EN”　“<a href="http://www.w3.org/TR/html4/loose.dtd&quot;&gt;" target="_blank" rel="external">http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</a></p>
+<p>##二、万能 float 闭合</p>
+<p>关于 clear float 的原理可参见 [How To Clear Floats Without Structural Markup]<br>将以下代码加入Global CSS 中,给需要闭合的div加上 class=”clearfix” 即可,屡试不爽.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line"><span class="comment">/* Clear Fix */</span>&lt;/<span class="tag">p</span>&gt;&lt; <span class="tag">p</span>&gt;<span class="rule"><span class="attribute">.clearfix</span>:<span class="value">after</span><br><span class="line">&#123;</span><br><span class="line">content:<span class="string">"."</span></span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">display</span>:<span class="value">block</span></span>;</span><br><span class="line">   <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">0</span></span></span>;</span><br><span class="line">   <span class="rule"><span class="attribute">clear</span>:<span class="value">both</span></span>;</span><br><span class="line">   <span class="rule"><span class="attribute">visibility</span>:<span class="value">hidden</span></span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="class">.clearfix</span></span><br><span class="line">   <span class="rules">&#123;</span><br><span class="line">   <span class="rule"><span class="attribute">display</span>:<span class="value">inline-block</span></span>;</span><br><span class="line">   &#125;</span></span><br><span class="line">   <span class="comment">/* Hide from IE Mac */</span></span><br><span class="line">   <span class="class">.clearfix</span> <span class="rules">&#123;<span class="rule"><span class="attribute">display</span>:<span class="value">block</span></span>;&#125;</span></span><br><span class="line">   <span class="comment">/* End hide from IE Mac */</span></span><br><span class="line">   <span class="comment">/* end of clearfix */</span></span><br><span class="line">   </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>##三、其他兼容技巧</p>
+<ol>
+<li>FF下给 div 设置 padding 后会导致 width 和 height 增加, 但IE不会.(可用!important解决)</li>
+<li>居中问题.</li>
+<li>垂直居中.将 line-height 设置为 当前 div 相同的高度, 再通过 vertical-align: middle.( 注意内容不要换行.)</li>
+<li>水平居中. margin: 0 auto;(当然不是万能)</li>
+<li>若需给 a 标签内内容加上 样式, 需要设置 display: block;(常见于导航标签)</li>
+<li>FF 和 IE 对 BOX 理解的差异导致相差 2px 的还有设为 float的div在ie下 margin加倍等问题.</li>
+<li>ul 标签在 FF 下面默认有 list-style 和 padding . 最好事先声明, 以避免不必要的麻烦. (常见于导航标签和内容列表)</li>
+<li>作为外部 wrapper 的 div 不要定死高度, 最好还加上 overflow: hidden.以达到高度自适应.</li>
+<li>关于手形光标. cursor: pointer. 而hand 只适用于 IE.</li>
+</ol>
+<h4 id="1-_针对firefox_ie6_ie7的css样式">1. 针对firefox ie6 ie7的css样式</h4><p>现在大部分都是用!important来hack，对于ie6和firefox测试可以正常显示，但是ie7对!important可以正确解释，会导致页面没按要求显示！找到一个针对IE7不错的hack方式就是使用“*+html”，现在用IE7浏览一下，应该没有问题了。现在写一个CSS可以这样：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#1</span> <span class="rules">&#123; <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#333</span></span></span>; &#125;</span> <span class="comment">/* Moz */</span> </span><br><span class="line">* <span class="tag">html</span> <span class="id">#1</span> <span class="rules">&#123; <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#666</span></span></span>; &#125;</span> <span class="comment">/* IE6 */</span> </span><br><span class="line">*+<span class="tag">html</span> <span class="id">#1</span> <span class="rules">&#123; <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#999</span></span></span>; &#125;</span> <span class="comment">/* IE7 */</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>那么在firefox下字体颜色显示为#333，IE6下字体颜色显示为#666，IE7下字体颜色显示为#999。</strong></p>
+<h4 id="2-_css布局中的居中问题">2. css布局中的居中问题</h4><p>主要的样式定义如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">body</span> <span class="rules">&#123;<span class="rule"><span class="attribute">TEXT-ALIGN</span>:<span class="value"> center</span></span>;&#125;</span></span><br><span class="line"><span class="id">#center</span> <span class="rules">&#123; <span class="rule"><span class="attribute">MARGIN-RIGHT</span>:<span class="value"> auto</span></span>; <span class="rule"><span class="attribute">MARGIN-LEFT</span>:<span class="value"> auto</span></span>; &#125;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>说明：</strong><br>首先在父级元素定义TEXT-ALIGN: center;这个的意思就是在父级元素内的内容居中；对于IE这样设定就已经可以了。<br>但在mozilla中不能居中。解决办法就是在子元素定义时候设定时再加上“MARGIN-RIGHT: auto;MARGIN-LEFT: auto; “<br>需要说明的是，如果你想用这个方法使整个页面要居中，建议不要套在一个DIV里，你可以依次拆出多个div，<br>只要在每个拆出的div里定义MARGIN-RIGHT: auto;MARGIN-LEFT: auto; 就可以了。</p>
+<h4 id="3-_盒模型不同解释">3. 盒模型不同解释</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#box</span>&#123; <span class="attribute">width</span>:<span class="number">600px</span>; <span class="comment">//for ie6.0- w\idth:500px; //for ff+ie6.0&#125;</span></span><br><span class="line"><span class="id">#box</span>&#123; <span class="attribute">width</span>:<span class="number">600px</span>!important <span class="comment">//for ff width:600px; //for ff+ie6.0 width /**/:500px; //for ie6.0-&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="4_浮动ie产生的双倍距离">4 浮动ie产生的双倍距离</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#box</span>&#123; <span class="attribute">float</span>:left; <span class="attribute">width</span>:<span class="number">100px</span>; <span class="attribute">margin</span>:<span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">100px</span>; <span class="comment">//这种情况之下IE会产生200px的距离 display:inline; //使浮动忽略&#125;</span></span><br></pre></td></tr></table></figure>
+<p>这里细说一下block,inline两个元素,Block元素的特点是:总是在新行上开始,高度,宽度,行高,边距都可以控制(块元素);Inline元素的特点是:和其他元素在同一行上,…不可控制(内嵌元素);<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#box</span>&#123; <span class="attribute">display</span>:block; <span class="comment">//可以为内嵌元素模拟为块元素 display:inline; //实现同一行排列的的效果 diplay:table;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="5-_IE不认得min-这个定义">5. IE不认得min-这个定义</h4><p>但实际上它把正常的width和height当作有min的情况来使。这样问题就大了，如果只用宽度和高度，正常的浏览器里这两个值就不会变，如果只用min-width和min-height的话，IE下面根本等于没有设置宽度和高度。比如要设置背景图片，这个宽度是比较重要的。要解决这个问题，可以这样：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#box</span><span class="rules">&#123; <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">80px</span></span></span>; <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">35px</span></span></span>;&#125;</span><span class="tag">html</span>&gt;<span class="tag">body</span> <span class="id">#box</span><span class="rules">&#123; <span class="rule"><span class="attribute">width</span>:<span class="value"> auto</span></span>; <span class="rule"><span class="attribute">height</span>:<span class="value"> auto</span></span>; <span class="rule"><span class="attribute">min-width</span>:<span class="value"> <span class="number">80px</span></span></span>; <span class="rule"><span class="attribute">min-height</span>:<span class="value"> <span class="number">35px</span></span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="6_页面的最小宽度">6 页面的最小宽度</h4><p>min-width是个非常方便的CSS命令，它可以指定元素最小也不能小于某个宽度，这样就能保证排版一直正确。但IE不认得这个，<br>而它实际上把width当做最小宽度来使。为了让这一命令在IE上也能用，可以把一个div放到body 标签下，然后为div指定一个类：<br>然后CSS这样设计：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#container</span><span class="rules">&#123; <span class="rule"><span class="attribute">min-width</span>:<span class="value"> <span class="number">600px</span></span></span>; <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="function">expression</span>(document.body.clientWidth &lt; <span class="number">600</span>? <span class="string">"600px"</span>: <span class="string">"auto"</span> )</span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>第一个min-width是正常的；但第2行的width使用了java script，这只有IE才认得，这也会让你的HTML文档不太正规。它实际上通过java script的判断来实现最小宽度。</p>
+<h4 id="7_清除浮动">7 清除浮动</h4><p>.hackbox{ display:table; //将对象作为块元素级的表格显示}或者.hackbox{ clear:both;}<br>或者加入:after（伪对象）,设置在对象后发生的内容，通常和content配合使用，IE不支持此伪对象，非Ie 浏览器支持，<br>所 以并不影响到IE/WIN浏览器。这种的最麻烦的……#box:after{ content: “.”; display: block; height: 0; clear: both; visibility: hidden;}</p>
+<h4 id="8-_DIV浮动IE文本产生3象素的bug">8. DIV浮动IE文本产生3象素的bug</h4><p>左边对象浮动，右边采用外补丁的左边距来定位，右边对象内的文本会离左边有3px的间距.</p>
+<pre><code><span class="id">#box</span>{ <span class="attribute">float</span>:left; <span class="attribute">width</span>:<span class="number">800px</span>;}<span class="id">#left</span>{ <span class="attribute">float</span>:left; <span class="attribute">width</span>:<span class="number">50%</span>;}<span class="id">#right</span>{ <span class="attribute">width</span>:<span class="number">50%</span>;}*<span class="tag">html</span> <span class="id">#left</span>{ <span class="attribute">margin-right</span>:-<span class="number">3px</span>; <span class="comment">//这句是关键}</span>
+</code></pre><p>HTML代码<br>    <div id="box"> <div id="left"></div> <div id="right"></div></div></p>
+<h4 id="9-_属性选择器(这个不能算是兼容,是隐藏css的一个bug)">9. 属性选择器(这个不能算是兼容,是隐藏css的一个bug)</h4><p>p[id]{}div[id]{}<br>这个对于IE6.0和IE6.0以下的版本都隐藏,FF和OPera作用<br>属性选择器和子选择器还是有区别的,子选择器的范围从形式来说缩小了,属性选择器的范围比较大,如p[id]中,所有p标签中有id的都是同样式的.</p>
+<h4 id="10-_IE捉迷藏的问题">10. IE捉迷藏的问题</h4><p>当div应用复杂的时候每个栏中又有一些链接，DIV等这个时候容易发生捉迷藏的问题。<br>有些内容显示不出来，当鼠标选择这个区域是发现内容确实在页面。<br>解决办法：对#layout使用line-height属性 或者给#layout使用固定高和宽。页面结构尽量简单。</p>
+<h4 id="11-_高度不适应">11. 高度不适应</h4><p>高度不适应是当内层对象的高度发生变化时外层高度不能自动进行调节，特别是当内层对象使用<br>margin 或paddign 时。<br>例：</p>
+<p>###<br>    <div id="box"><br>    <p>p对象中的内容</p><br>    </div></p>
+<p>CSS：</p>
+<pre><code><span class="id">#box</span> <span class="rules">{<span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#eee</span></span></span>; }</span> 
+<span class="id">#box</span> <span class="tag">p</span> <span class="rules">{<span class="rule"><span class="attribute">margin-top</span>:<span class="value"> <span class="number">20px</span></span></span>;<span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> <span class="number">20px</span></span></span>; <span class="rule"><span class="attribute">text-align</span>:<span class="value">center</span></span>; }</span>
+</code></pre><p><strong>解决方法：</strong><br>在P对象上下各加2个空的div对象CSS代码：.1{height:0px;overflow:hidden;}或者为DIV加上border属性。</p>
+<hr>
+<h2 id="IE与Firefox的CSS兼容大全">IE与Firefox的CSS兼容大全</h2><ol>
+<li><p>DOCTYPE 影响 CSS 处理</p>
+</li>
+<li><p>FF: div 设置 margin-left, margin-right 为 auto 时已经居中, IE 不行</p>
+</li>
+<li><p>FF: body 设置 text-align 时, div 需要设置 margin: auto(主要是 margin-left,margin-right) 方可居中</p>
+</li>
+<li><p>FF: 设置 padding 后, div 会增加 height 和 width, 但 IE 不会, 故需要用 !important 多设一个 height 和 width</p>
+</li>
+<li><p>FF: 支持 !important, IE 则忽略, 可用 !important 为 FF 特别设置样式</p>
+</li>
+<li><p>div 的垂直居中问题: vertical-align:middle; 将行距增加到和整个DIV一样高 line-height:200px; 然后插入文字，就垂直居中了。缺点是要控制内容不要换行</p>
+</li>
+<li><p>cursor: pointer 可以同时在 IE FF 中显示游标手指状， hand 仅 IE 可以</p>
+</li>
+<li><p>FF: 链接加边框和背景色，需设置 display: block, 同时设置 float: left 保证不换行。参照 menubar, 给 a 和 menubar 设置高度是为了避免底边显示错位, 若不设 height, 可以在 menubar 中插入一个空格。</p>
+</li>
+<li><p>在mozilla firefox和IE中的BOX模型解释不一致导致相差2px解决方法：<br>div{margin:30px!important;margin:28px;}<br>注意这两个margin的顺序一定不能写反，据阿捷的说法!important这个属性IE不能识别，但别的浏览器可以识别。所以在IE下其实解释成这样：<br>div{maring:30px;margin:28px}<br>重复定义的话按照最后一个来执行，所以不可以只写margin:XXpx!important;</p>
+</li>
+</ol>
+<p>div+css兼容（二）</p>
+<p>DIV+CSS兼容 IE6 IE7 火狐<br>在区别火狐和IE时最常用的是!important方法,对于其他不同浏览器和浏览器的不同版本的的兼容性问题还有下面一些方法,比如:@import,注释,属性选择符,子对象选择符和voice-family等方法,这些方法在《css网站布局实录》中有讲述.<br>下面是IE和火狐的css兼容性问题<br>1.DOCTYPE 影响 CSS 处理<br>2.FF: div 设置 margin-left, margin-right 为 auto 时已经居中, IE 不行<br>3.FF: body 设置 text-align 时, div 需要设置 margin: auto(主要是 margin-left,margin-right) 方可居中<br>4.FF: 设置 padding 后, div 会增加 height 和 width, 但 IE 不会, 故需要用 !important 多设一个 height 和 width<br>5.FF: 支持 !important, IE 则忽略, 可用 !important 为 FF 特别设置样式</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://ktangel.github.io/blog/2015/11/17/浏览器兼容/" data-title="浏览器兼容性问题解决方案汇总记录 | LeoLiu的Blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/blog/2015/12/23/webkit-打包发布/" title="webkit系列之打包发布">
+  <strong>上一篇：</strong><br/>
+  <span>
+  webkit系列之打包发布</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/blog/2015/11/17/CSS实现流程示意图/"  title="CSS实现流程示意图">
+ <strong>下一篇：</strong><br/> 
+ <span>CSS实现流程示意图
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/11/17/浏览器兼容/" data-title="浏览器兼容性问题解决方案汇总记录" data-url="http://ktangel.github.io/blog/2015/11/17/浏览器兼容/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目錄</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-_针对firefox_ie6_ie7的css样式"><span class="toc-number">1.</span> <span class="toc-text">1. 针对firefox ie6 ie7的css样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-_css布局中的居中问题"><span class="toc-number">2.</span> <span class="toc-text">2. css布局中的居中问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-_盒模型不同解释"><span class="toc-number">3.</span> <span class="toc-text">3. 盒模型不同解释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4_浮动ie产生的双倍距离"><span class="toc-number">4.</span> <span class="toc-text">4 浮动ie产生的双倍距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-_IE不认得min-这个定义"><span class="toc-number">5.</span> <span class="toc-text">5. IE不认得min-这个定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6_页面的最小宽度"><span class="toc-number">6.</span> <span class="toc-text">6 页面的最小宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7_清除浮动"><span class="toc-number">7.</span> <span class="toc-text">7 清除浮动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-_DIV浮动IE文本产生3象素的bug"><span class="toc-number">8.</span> <span class="toc-text">8. DIV浮动IE文本产生3象素的bug</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-_属性选择器(这个不能算是兼容,是隐藏css的一个bug)"><span class="toc-number">9.</span> <span class="toc-text">9. 属性选择器(这个不能算是兼容,是隐藏css的一个bug)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-_IE捉迷藏的问题"><span class="toc-number">10.</span> <span class="toc-text">10. IE捉迷藏的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-_高度不适应"><span class="toc-number">11.</span> <span class="toc-text">11. 高度不适应</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IE与Firefox的CSS兼容大全"><span class="toc-number"></span> <span class="toc-text">IE与Firefox的CSS兼容大全</span></a>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="码农圈">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 大家好,我是LeoLiu,欢迎来到我的Blog,这里是我偶尔备忘写的一些学习笔记,请多指教 <br/>
+			Hello ,I&#39;m LeoLiu.This is my blog,thank you for coming.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:lygltys@163.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/blog/about" target="_blank" title="LeoLiu">LeoLiu</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/blog/js/jquery-2.0.3.min.js"></script>
+<script src="/blog/js/jquery.imagesloaded.min.js"></script>
+<script src="/blog/js/gallery.js"></script>
+<script src="/blog/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"leoliu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/blog/img/scrollup.png"/></a>
+	</div>
+	<script src="/blog/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
